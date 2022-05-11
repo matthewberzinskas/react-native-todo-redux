@@ -1,34 +1,28 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { View, StyleSheet, Text } from "react-native";
+import { TodoList } from "./components/TodoList";
+import { AddTodo } from "./components/AddTodo";
 
-export function TodoList() {
-  const todos = useSelector((state) => state.todos);
-  console.log(todos);
-
+export const TodoApp = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}> Todo List </Text>
-      {todos.map((todo, index) => (
-        <Text style={styles.todoText} key={todo.id}>{`${index + 1}. ${
-          todo.text
-        }`}</Text>
-      ))}
+      <Text style={styles.title}>Todo App</Text>
+      <AddTodo />
+      <TodoList />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 12,
+  },
   container: {
     flex: 1,
-    alignItems: "center",
     justifyContent: "center",
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  todoText: {
-    margin: 4,
+    alignItems: "center",
+    backgroundColor: "white",
   },
 });
