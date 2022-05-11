@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../reducers/todosSlice";
+import { addTodo } from "../reducers/todosSlicetodosSlice";
 
 export const AddTodo = () => {
   const [text, setText] = useState();
